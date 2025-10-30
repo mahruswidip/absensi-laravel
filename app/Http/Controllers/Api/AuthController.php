@@ -33,7 +33,7 @@ class AuthController extends Controller
         $token = $user->createToken('auth_token')->plainTextToken;
 
         // Load relationships
-        $user->load(['shiftKerja', 'departemen', 'jabatan']);
+        $user->load(['shiftKerja', 'departemen', 'jabatan', 'workLocation']);
 
         $response = [
             'user' => new UserResource($user),
@@ -116,7 +116,7 @@ class AuthController extends Controller
         $user = $request->user();
 
         // Load relationships
-        $user->load(['shiftKerja', 'departemen', 'jabatan']);
+        $user->load(['shiftKerja', 'departemen', 'jabatan', 'workLocation']);
 
         $response = [
             'user' => new UserResource($user),

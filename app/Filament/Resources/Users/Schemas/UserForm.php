@@ -61,6 +61,12 @@ class UserForm
                     ->searchable()
                     ->preload()
                     ->helperText('Pilih 1 shift kerja untuk karyawan'),
+                Select::make('work_location_id')
+                    ->label('Lokasi Kerja')
+                    ->relationship('workLocation', 'name')
+                    ->searchable()
+                    ->preload()
+                    ->helperText('Pilih lokasi kerja untuk karyawan'),
                 FileUpload::make('image_url')
                     ->label('Avatar')
                     ->image()

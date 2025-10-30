@@ -25,11 +25,15 @@ class UserResource extends JsonResource
             'jabatan_id' => $this->jabatan_id,
             'departemen_id' => $this->departemen_id,
             'shift_kerja_id' => $this->shift_kerja_id,
+            'work_location_id' => $this->work_location_id,
             'image_url' => $this->image_url ? asset('storage/'.$this->image_url) : null,
             'face_embedding' => $this->face_embedding,
             'fcm_token' => $this->fcm_token,
             'created_at' => $this->created_at,
             'updated_at' => $this->updated_at,
+            'shift_kerja' => $this->whenLoaded('shiftKerja'),
+            'departemen' => $this->whenLoaded('departemen'),
+            'work_location' => $this->whenLoaded('workLocation'),
         ];
     }
 }

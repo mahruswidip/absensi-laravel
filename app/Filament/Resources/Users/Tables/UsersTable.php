@@ -71,6 +71,14 @@ class UsersTable
                     ->sortable()
                     ->placeholder('Belum diset')
                     ->icon('heroicon-o-clock'),
+                TextColumn::make('workLocation.name')
+                    ->label('Lokasi Kerja')
+                    ->badge()
+                    ->color('success')
+                    ->searchable()
+                    ->sortable()
+                    ->placeholder('Belum diset')
+                    ->icon('heroicon-o-map-pin'),
                 TextColumn::make('created_at')
                     ->dateTime()
                     ->sortable()
