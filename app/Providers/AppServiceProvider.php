@@ -3,6 +3,7 @@
 namespace App\Providers;
 
 use App\Models\LeaveType;
+use Filament\Facades\Filament;
 use App\Observers\LeaveTypeObserver;
 use Illuminate\Pagination\Paginator;
 use Illuminate\Support\ServiceProvider;
@@ -22,6 +23,9 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
+	Filament::serving(function () {
+        config(['filament.auth.guard' => 'web']);
+    	});
         //
         Paginator::useBootstrapFive();
 
